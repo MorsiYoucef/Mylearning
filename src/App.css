@@ -1,0 +1,38 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+table,
+th,
+tr,
+td {
+  border: 0.1em solid lightgray;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+th {
+  background-color: rgb(243, 243, 243);
+  width: 150px;
+}
+th {
+}
+#note {
+  width: 4rem;
+}
+#terrestrial {
+  width: 250px;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  border-collapse: collapse;
+}
+.parent {
+  align-items: end;
+}
+.ok {
+  width: 250px;
+  height: 50px;
+}
