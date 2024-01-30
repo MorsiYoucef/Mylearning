@@ -1,38 +1,36 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
+@property --colorPrimary {
+  syntax: '<color>';
+  initial-value: magenta;
+  inherits: false;
 }
-table,
-th,
-tr,
-td {
-  border: 0.1em solid lightgray;
-  border-collapse: collapse;
-  padding: 5px;
-  text-align: center;
+
+@property --stop {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: false;
 }
-th {
-  background-color: rgb(243, 243, 243);
-  width: 150px;
+
+body {
+  /* might wanna RE-declare values as a fallback, but not necessary in supportin browsers. */
+  --colorPrimary: magenta;
+  --stop: 50%;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0;
 }
-th {
+
+div {
+  height: 100vh;
+  width: 100%;
+  transition: --stop 0.5s, --colorPrimary 0.2s;
+  background: linear-gradient(
+    to bottom,
+    black var(--stop),
+    var(--colorPrimary)
+  );
 }
-#note {
-  width: 4rem;
-}
-#terrestrial {
-  width: 250px;
-}
-.cell {
-  width: 100px;
-  height: 100px;
-  border-collapse: collapse;
-}
-.parent {
-  align-items: end;
-}
-.ok {
-  width: 250px;
-  height: 50px;
+div:hover {
+  --colorPrimary: red;
+  --stop: 80%;
 }
